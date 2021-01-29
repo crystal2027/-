@@ -1,0 +1,27 @@
+*运行前请先确保环境没有问题，否则会无法运行*
+
+*编译前需要将node的证书拷贝到asset-app/src/test/resources/conf目录下*
+
+# 假设我们将asset-app放在~/fisco目录下 进入~/fisco目录
+$ cd ~/fisco
+
+# 拷贝节点证书到项目的资源目录（这个需要你们自己的node的证书）
+$ cp -r nodes/127.0.0.1/sdk/* asset-app/src/test/resources/conf
+
+*编译*
+
+# 切换到项目根目录
+
+# 编译项目
+$ ./gradlew build
+
+运行
+
+cd dist
+部署合约
+bash asset_run.sh deploy
+
+调用合约的方法
+eg:
+bash asset_run.sh  register Alice 100000
+
